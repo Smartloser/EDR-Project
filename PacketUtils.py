@@ -41,9 +41,10 @@ def udp_unpack(data):
         s_port, d_port, length, checksum = struct.unpack('! H H H H', data[:8])
         return s_port, d_port, length, checksum, data[8:]
 
-def unpack(raw_packet, protocol):
+def unpack(raw_packet):
     eth_layer = unpack_ethernet(raw_packet)
     ip_layer = unpack_ipv4(eth_layer[-1])
+    protocol = ip_layer[-5]
     proto_layer = ()
 
     if protocol == 'TCP':

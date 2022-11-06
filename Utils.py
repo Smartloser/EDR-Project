@@ -6,14 +6,11 @@ class AddrType:
 
 class FilterType:
 
-    TCP = 1
-    UDP = 2
+    TCP = 6
+    UDP = 17
     TCPUDP = 3
     SYN = 4
     ACK = 5
     EVIL_BIT = 6
 
     filter_dict = {'tcp', TCP, 'udp', UDP, 'tcpudp', TCPUDP, 'syn', SYN, 'ack', ACK, 'evil', EVIL_BIT}
-
-    def a():
-        print(TCP)
